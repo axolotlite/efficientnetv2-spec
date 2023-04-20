@@ -651,7 +651,8 @@ def EfficientNetL3(
       classes=1000,
       **kwargs
 ):
-    return effnetv2_model.get_model('efficientnetv2-m', include_top=False)
+    effv2 = effnetv2_model.get_model('efficientnetv2-m', weights=False,include_top=False)
+    return effv2
   
   
 setattr(EfficientNetB0, '__doc__', EfficientNet.__doc__)
