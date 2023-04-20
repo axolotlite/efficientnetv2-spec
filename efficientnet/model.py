@@ -635,7 +635,25 @@ def EfficientNetL2(
         **kwargs
     )
 
-
+  
+# !git clone https://github.com/google/automl.git
+# import sys
+# sys.path.insert(0,'/kaggle/working/automl/efficientnetv2')
+import effnetv2_model
+# from .preprocessing import center_crop_and_resize
+# net = 
+def EfficientNetL3(
+      include_top=True,
+      weights='imagenet',
+      input_tensor=None,
+      input_shape=None,
+      pooling=None,
+      classes=1000,
+      **kwargs
+):
+    return effnetv2_model.get_model('efficientnetv2-m', include_top=False)
+  
+  
 setattr(EfficientNetB0, '__doc__', EfficientNet.__doc__)
 setattr(EfficientNetB1, '__doc__', EfficientNet.__doc__)
 setattr(EfficientNetB2, '__doc__', EfficientNet.__doc__)
