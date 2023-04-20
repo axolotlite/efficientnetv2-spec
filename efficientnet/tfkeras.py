@@ -15,7 +15,7 @@ EfficientNetB5 = inject_tfkeras_modules(model.EfficientNetB5)
 EfficientNetB6 = inject_tfkeras_modules(model.EfficientNetB6)
 EfficientNetB7 = inject_tfkeras_modules(model.EfficientNetB7)
 EfficientNetL2 = inject_tfkeras_modules(model.EfficientNetL2)
-efficientnetv2 = inject_tfkeras_modules(net)
+EfficientNetL3 = inject_tfkeras_modules(net)
 
 preprocess_input = inject_tfkeras_modules(model.preprocess_input)
 
