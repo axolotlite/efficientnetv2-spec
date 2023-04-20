@@ -1,6 +1,6 @@
 from . import inject_tfkeras_modules, init_tfkeras_custom_objects
 from . import model
-!git clone https://github.com/google/automl.git
+# !git clone https://github.com/google/automl.git
 import sys
 sys.path.insert(0,'/kaggle/working/automl/efficientnetv2')
 import effnetv2_model
