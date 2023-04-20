@@ -25,18 +25,17 @@ from keras.layers import BatchNormalization, Conv2D, Dense
 
 
 def _get_model_by_name(name, *args, **kwargs):
-    # models = {
-    #     'efficientnet-b0': efficientnet.keras.EfficientNetB0,
-    #     'efficientnet-b1': efficientnet.keras.EfficientNetB1,
-    #     'efficientnet-b2': efficientnet.keras.EfficientNetB2,
-    #     'efficientnet-b3': efficientnet.keras.EfficientNetB3,
-    #     'efficientnet-b4': efficientnet.keras.EfficientNetB4,
-    #     'efficientnet-b5': efficientnet.keras.EfficientNetB5,
-    # }
+    models = {
+        'efficientnet-b0': efficientnet.keras.EfficientNetB0,
+        'efficientnet-b1': efficientnet.keras.EfficientNetB1,
+        'efficientnet-b2': efficientnet.keras.EfficientNetB2,
+        'efficientnet-b3': efficientnet.keras.EfficientNetB3,
+        'efficientnet-b4': efficientnet.keras.EfficientNetB4,
+        'efficientnet-b5': efficientnet.keras.EfficientNetB5,
+    }
 
-    # model_fn = models[name]
-    # model = model_fn(*args, **kwargs)
-    model = name
+    model_fn = models[name]
+    model = model_fn(*args, **kwargs)
     return model
 
 
@@ -109,7 +108,7 @@ def convert_tensorflow_model(
             except:
                 print(f"Skipping variable {variable.name}, an exception occurred")
     model = _get_model_by_name(
-        model_name
+        model_name, include_top=True, input_shape=None, weights=None, classes=1000
     )
     load_weights(model, weights)
     output_file = f"{output_file}.h5"
