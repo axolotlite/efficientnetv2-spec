@@ -12,6 +12,7 @@ EfficientNetB5 = inject_keras_modules(model.EfficientNetB5)
 EfficientNetB6 = inject_keras_modules(model.EfficientNetB6)
 EfficientNetB7 = inject_keras_modules(model.EfficientNetB7)
 EfficientNetL2 = inject_keras_modules(model.EfficientNetL2)
+EfficientNetL3 = inject_keras_modules(model.EfficientNetL3)
 
 preprocess_input = inject_keras_modules(model.preprocess_input)
 
